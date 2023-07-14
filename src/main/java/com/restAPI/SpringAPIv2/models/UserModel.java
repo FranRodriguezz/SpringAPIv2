@@ -1,7 +1,15 @@
 package com.restAPI.SpringAPIv2.models;
 
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "user")
 public class UserModel {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private Long id;
 
     private String name;
